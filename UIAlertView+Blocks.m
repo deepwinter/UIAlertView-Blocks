@@ -176,7 +176,7 @@ static const void *UIAlertViewShouldEnableFirstOtherButtonBlockKey  = &UIAlertVi
     
     id originalDelegate = objc_getAssociatedObject(self, UIAlertViewOriginalDelegateKey);
     if (originalDelegate && [originalDelegate respondsToSelector:@selector(willPresentAlertView:)]) {
-        [originalDelegate willPresentAlertView:alertView];
+        //[originalDelegate willPresentAlertView:alertView];
     }
 }
 
@@ -189,7 +189,7 @@ static const void *UIAlertViewShouldEnableFirstOtherButtonBlockKey  = &UIAlertVi
     
     id originalDelegate = objc_getAssociatedObject(self, UIAlertViewOriginalDelegateKey);
     if (originalDelegate && [originalDelegate respondsToSelector:@selector(didPresentAlertView:)]) {
-        [originalDelegate didPresentAlertView:alertView];
+        //[originalDelegate didPresentAlertView:alertView];
     }
 }
 
@@ -203,7 +203,7 @@ static const void *UIAlertViewShouldEnableFirstOtherButtonBlockKey  = &UIAlertVi
     
     id originalDelegate = objc_getAssociatedObject(self, UIAlertViewOriginalDelegateKey);
     if (originalDelegate && [originalDelegate respondsToSelector:@selector(alertViewCancel:)]) {
-        [originalDelegate alertViewCancel:alertView];
+        //[originalDelegate alertViewCancel:alertView];
     }
 }
 
@@ -216,7 +216,7 @@ static const void *UIAlertViewShouldEnableFirstOtherButtonBlockKey  = &UIAlertVi
     
     id originalDelegate = objc_getAssociatedObject(self, UIAlertViewOriginalDelegateKey);
     if (originalDelegate && [originalDelegate respondsToSelector:@selector(alertView:clickedButtonAtIndex:)]) {
-        [originalDelegate alertView:alertView clickedButtonAtIndex:buttonIndex];
+        //[originalDelegate alertView:alertView clickedButtonAtIndex:buttonIndex];
     }
 }
 
@@ -229,7 +229,7 @@ static const void *UIAlertViewShouldEnableFirstOtherButtonBlockKey  = &UIAlertVi
     
     id originalDelegate = objc_getAssociatedObject(self, UIAlertViewOriginalDelegateKey);
     if (originalDelegate && [originalDelegate respondsToSelector:@selector(alertView:willDismissWithButtonIndex:)]) {
-        [originalDelegate alertView:alertView willDismissWithButtonIndex:buttonIndex];
+        //[originalDelegate alertView:alertView willDismissWithButtonIndex:buttonIndex];
     }
 }
 
@@ -242,7 +242,7 @@ static const void *UIAlertViewShouldEnableFirstOtherButtonBlockKey  = &UIAlertVi
     
     id originalDelegate = objc_getAssociatedObject(self, UIAlertViewOriginalDelegateKey);
     if (originalDelegate && [originalDelegate respondsToSelector:@selector(alertView:didDismissWithButtonIndex:)]) {
-        [originalDelegate alertView:alertView didDismissWithButtonIndex:buttonIndex];
+        //[originalDelegate alertView:alertView didDismissWithButtonIndex:buttonIndex];
     }
 }
 
@@ -252,11 +252,13 @@ static const void *UIAlertViewShouldEnableFirstOtherButtonBlockKey  = &UIAlertVi
     if (shouldEnableFirstOtherButtonBlock) {
         return shouldEnableFirstOtherButtonBlock(alertView);
     }
-    
+   
+    /*
     id originalDelegate = objc_getAssociatedObject(self, UIAlertViewOriginalDelegateKey);
     if (originalDelegate && [originalDelegate respondsToSelector:@selector(alertViewShouldEnableFirstOtherButton:)]) {
         return [originalDelegate alertViewShouldEnableFirstOtherButton:alertView];
     }
+     */
     
     return YES;
 }
